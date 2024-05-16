@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Básica</title>
+    <link rel="stylesheet" href="../src/styles/cursos.css">
+</head>
+<body>
+    <header>
+        <h1> Matemática Básica </h1>
+    </header>
+    <main>
+        <iframe width="70%" height="615" src="https://www.youtube.com/embed/e78_5WIssSU?si=1dNzhmyJBzszCvtp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div id="playlist"></div>
+    </main>
+    <footer>
+        <p>&copy; 2022 Matemática Básica. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function loadPlaylist() {
+            const playlistDiv = document.getElementById("playlist");
+            const playlistId = "PLAYLIST_ID"; // Substitua pelo ID real da sua playlist
+            const apiKey = "SUA_API_KEY"; // Substitua pela sua chave de API do YouTube
+            
+            const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlistId}&key=${apiKey}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const items = data.items;
+                    const playlistHTML = "<h2>Playlist</h2><ul>";
+                    items.forEach(item => {
+                        const videoId = item.snippet.resourceId.videoId;
+                        const videoTitle = item.snippet.title;
+                        playlistHTML += `<li><a href="https://www.youtube.com/watch?v=${videoId}">${videoTitle}</a></li>`;
+                    });
+                    playlistHTML += "</ul>";
+                    playlistDiv.innerHTML = playlistHTML;
+                })
+                .catch(error => console.error("Erro ao carregar a playlist:", error));
+        }
+
+        loadPlaylist();
+    </script>
+</body>
+</html>

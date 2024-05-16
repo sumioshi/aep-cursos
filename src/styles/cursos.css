@@ -1,0 +1,33 @@
+:root {
+    --main-bg-color: #333;
+    --main-text-color: #fff;
+    --main-font: Arial, sans-serif;
+}
+
+body, h1:not(.courses), h2, h3, p, ul {
+    margin: 0;
+    font-family: var(--main-font);
+}
+
+header {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    padding: 10px 0;
+ }
+ 
+

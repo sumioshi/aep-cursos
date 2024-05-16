@@ -1,0 +1,185 @@
+:root {
+    --main-bg-color: #333;
+    --main-text-color: #fff;
+    --main-font: Arial, sans-serif;
+}
+
+body, h1:not(.courses), h2, h3, p, ul {
+    margin: 0;
+    font-family: var(--main-font);
+}
+
+header {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    width: 60px;
+    order: 1;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    order: 2;
+    flex-grow: 1;
+}
+
+header ul li.home {
+    margin-right: auto;
+}
+
+header ul li.login {
+    margin-right: 10px;
+}
+
+header ul li a {
+    color: var(--main-text-color);
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionParte1, .sectionParte2 {
+    background-color: #f0f0f0;
+    padding: 40px;
+    text-align: center;
+}
+
+.sectionParte1 h1 {
+    font-size: 30px;
+}
+
+.sectionParte1 h2 {
+    font-size: 20px;
+}
+
+.sectionParte1 h3 {
+    font-size: 18px;
+}
+
+.sectionParte2 h1.courses {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.buttonContainer button {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+}
+
+.buttonContainer button:hover {
+    transition: 0.3s ease;
+    transform: scale(1.1);
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+   display: flex;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   justify-content: center;
+   background-color: var(--main-bg-color);
+   color: var(--main-text-color);
+   text-align: center;
+   padding: 10px 0;
+}
+
+.courses-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+    header img {
+        width: 50px;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    .sectionParte2 h1.courses {
+        margin-left: 20px;
+    }
+
+    header ul li.login {
+        margin-bottom: 10px;
+        margin-left: 250px;
+    }
+
+    .buttonContainer button {
+        width: 100%;
+    }
+
+    .courses-container {
+        align-items: center;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    header img {
+        width: 60px;
+    }
+
+    header ul {
+        flex-direction: row;
+    }
+
+    .sectionParte2 h1.courses {
+        margin-left: 50px;
+    }
+
+    .buttonContainer button {
+        width: 50%;
+    }
+
+    .courses-container {
+        align-items: center;
+    }
+}
+
+@media (min-width: 1025px) {
+    header img {
+        width: 60px;
+    }
+
+    header ul {
+        flex-direction: row;
+    }
+
+    .sectionParte2 h1.courses {
+        margin-left: 110px;
+    }
+
+    .buttonContainer button {
+        width: 200px;
+    }
+
+    .courses-container {
+        align-items: flex-start;
+    }
+}
