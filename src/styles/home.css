@@ -4,13 +4,18 @@
     --main-font: Arial, sans-serif;
 }
 
+
+
+
 body, h1:not(.courses), h2, h3, p, ul {
     margin: 0;
     font-family: var(--main-font);
+    background-color: #f0f0f0;
+    
 }
 
-header {
-    background-color: var(--main-bg-color);
+header { 
+    background-color: var(--main-bg-color); 
     color: var(--main-text-color);
     padding-top: 15px;
     display: flex;
@@ -24,6 +29,7 @@ header img {
 }
 
 header ul {
+    background-color: #333;
     list-style: none;
     padding: 0;
     display: flex;
@@ -83,6 +89,7 @@ main {
     width: 200px;
     height: 50px;
     margin: 10px;
+    list-style: none;
 }
 
 .buttonContainer button:hover {
@@ -90,12 +97,25 @@ main {
     transform: scale(1.1);
 }
 
+.buttonContainer button a {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
 button a {
     color: white;
     text-decoration: none;
+    list-style: none;
+}
+
+div.buttonContainer button a {
+    color: white;
+    text-decoration: none;
+    list-style: none;
 }
 
 footer {
+    
    display: flex;
    position: fixed;
    bottom: 0;
@@ -106,6 +126,12 @@ footer {
    text-align: center;
    padding: 10px 0;
 }
+
+footer  p {
+    background-color: #333;
+
+}
+
 
 .courses-container {
     display: flex;
